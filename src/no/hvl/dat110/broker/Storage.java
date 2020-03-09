@@ -138,12 +138,9 @@ public class Storage {
 	public void removeSubscriber(String user, String topic) {
 		
 		// TODO: remove the user as subscriber to the topic
-		//Set<String> users = new HashSet<String>();
-		//users.add(user);
 		Set<String> users = (Set<String>)getSubscribers(topic);
 		users.remove(user);
 		
-		//subscriptions.remove(topic, users);
 		subscriptions.put(topic, users);
 		
 		

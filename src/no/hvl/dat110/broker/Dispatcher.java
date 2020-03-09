@@ -162,6 +162,8 @@ public class Dispatcher extends Stopable {
 	}
 
 	public void onPublish(PublishMsg msg) {
+		
+		String topic = msg.getTopic();
 
 		Logger.log("onPublish:" + msg.toString());
 
@@ -169,7 +171,7 @@ public class Dispatcher extends Stopable {
 		// topic and message is contained in the subscribe message
 		// messages must be sent used the corresponding client session objects
 		
-		HashSet<String> subscribers = (HashSet<String>)storage.getSubscribers(msg.getTopic());
+		HashSet<String> subscribers = (HashSet<String>)storage.getSubscribers(topic);
 		
 		//With task E: Message buffering
 		for(String subscriber : subscribers) {

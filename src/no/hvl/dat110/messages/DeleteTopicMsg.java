@@ -25,7 +25,7 @@ public class DeleteTopicMsg extends Message {
 
 	@Override
 	public String toString() {
-		return "DeleteTopicMsg [topic=" + topic + "]";
+		return "[A topic has been deleted. User = " + getUser() + " Topic = " + getTopic() + "]";
 	}
 
 	
