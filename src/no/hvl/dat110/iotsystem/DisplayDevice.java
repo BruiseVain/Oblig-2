@@ -34,12 +34,7 @@ public class DisplayDevice {
 				e.printStackTrace();
 			}
 		}
-		
-		/*
-		for(int i=0; i<COUNT; i++) {
-			client.receive();
-		}*/
-		// - unsubscribe from the topic
+		// - unsubscribe to the client
 		client.unsubscribe(Common.TEMPTOPIC);
 		// - disconnect from the broker
 		client.disconnect();

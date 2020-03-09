@@ -18,7 +18,7 @@ public class TemperatureDevice {
 
 		// create a client object and use it to
 		
-		Client client = new Client("temperaturesensor", Common.BROKERHOST, Common.BROKERPORT);
+		Client client = new Client("temperature", Common.BROKERHOST, Common.BROKERPORT);
 
 		// - connect to the broker
 		client.connect();
@@ -32,10 +32,6 @@ public class TemperatureDevice {
 			}
 		}
 		
-		/*
-		for(int i = 0; i<COUNT; i++) {
-			client.publish(Common.TEMPTOPIC, sn.toString());
-		}*/
 		// - disconnect from the broker
 		client.disconnect();
 

@@ -21,6 +21,7 @@ public class Storage {
 	
 	protected ConcurrentHashMap<String, ClientSession> clients;
 	
+	//Buffering of messages:
 	protected ConcurrentHashMap<String, Set<Message>> bufferedMessages;
 
 	public Storage() {
@@ -58,7 +59,7 @@ public class Storage {
 	public Set<Message> getBufferedMessages(String user){
 		return bufferedMessages.get(user);
 	}
-
+	
 	public void addBufferedMessage(String user, Message message){
 		Set<Message> msg;
 		if(!bufferedMessages.containsKey(user)) {
@@ -66,6 +67,7 @@ public class Storage {
 		}else {
 			msg = bufferedMessages.get(user);
 		}
+		
 		msg.add(message);
 		bufferedMessages.put(user, msg);
 
